@@ -36,7 +36,7 @@
       topic="sss_${suffix}"
       mass="0.015"
       update_rate="2"
-      samples="60"
+      samples="120"
       fov="${pi/3.0}"
       range_min="1.0"
       range_max="200.0"
@@ -153,7 +153,7 @@
       </ray>
       <plugin name="sonar${suffix}_controller" filename="libgazebo_ros_gpu_laser.so">
         <topicName>${topic}</topicName>
-        <frameName>sonar${suffix}_link</frameName>
+        <frameName>${namespace}/sonar${suffix}_link</frameName>
       </plugin>
       <!-- TODO: Separate switchable sonar version in another macro -->
       <!-- <plugin name="switchable_sonar{suffix}_ros_interface" filename="libuuv_gazebo_ros_switchable_gpu_ray_sensor.so">
